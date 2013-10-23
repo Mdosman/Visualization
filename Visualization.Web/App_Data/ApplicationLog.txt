@@ -1,0 +1,176 @@
+======================================================
+Log Message - 07-11-2013:16-23-55-914 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-23-55-992 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-05-817 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-05-897 - System.Data.OleDb.OleDbException: No value given for one or more required parameters.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-05-899 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-52-402 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-52-609 - System.InvalidOperationException: The given ColumnName 'FolderName' does not match up with any column in data source. ---> System.IndexOutOfRangeException: FolderName
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
+   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 164
+======================================================
+======================================================
+Log Message - 07-11-2013:16-25-52-612 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-26-42-526 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-27-06-144 - System.Data.OleDb.OleDbException: Syntax error (missing operator) in query expression 'Test FolderName'.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+======================================================
+======================================================
+Log Message - 07-11-2013:16-27-06-145 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-27-25-939 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-27-56-426 - System.Data.OleDb.OleDbException: No value given for one or more required parameters.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+======================================================
+======================================================
+Log Message - 07-11-2013:16-27-56-427 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-28-09-739 - Processing File Started :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-11-2013:16-28-17-756 - Processing File Ended :C:\UploadMessages\Test.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-10-04-626 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-10-04-788 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-16-16-479 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-16-16-624 - System.Data.SqlClient.SqlException: Received an invalid column length from the bcp client for colid 5.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlBulkCopy.WriteToServerInternal()
+   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
+   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 164
+======================================================
+======================================================
+Log Message - 07-12-2013:10-16-16-627 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-21-56-430 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-22-31-739 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+======================================================
+======================================================
+Log Message - 07-12-2013:10-22-31-741 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-25-13-812 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-25-30-595 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+======================================================
+======================================================
+Log Message - 07-12-2013:10-25-30-597 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-25-31-836 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-26-08-468 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader()
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+======================================================
+======================================================
+Log Message - 07-12-2013:10-26-08-470 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-34-11-712 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-34-11-929 - System.Data.SqlClient.SqlException: Received an invalid column length from the bcp client for colid 5.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlBulkCopy.WriteToServerInternal()
+   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
+   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
+   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 167
+======================================================
+======================================================
+Log Message - 07-12-2013:10-34-11-932 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-35-16-352 - Processing File Started :C:\UploadMessages\Test2.xls 
+======================================================
+======================================================
+Log Message - 07-12-2013:10-35-16-459 - Processing File Ended :C:\UploadMessages\Test2.xls 
+======================================================

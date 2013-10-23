@@ -1,0 +1,28 @@
+﻿body {
+}
+
+
+.Label
+{
+	font-size: 10px;
+	font-family: Verdana;
+	position: relative;
+	height: 10px;
+	text-align: left;
+	color: navy;
+}
+
+.TextBox
+{	
+	font-family:Verdana;
+	FONT-SIZE: 10px;
+	COLOR: #3F3F3F;	
+}
+
+.ui-widget TEXTAREA
+{	
+	font-family:Verdana;
+	FONT-SIZE: 10px;
+	COLOR: #3F3F3F;	
+}
+

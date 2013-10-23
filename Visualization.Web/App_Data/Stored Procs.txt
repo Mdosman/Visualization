@@ -1,0 +1,126 @@
+
+CREATE PROCEDURE [dbo].[sp_UploadImages]
+@FolderName VARCHAR(50),
+@ImageNumber INT,
+@FileName VARCHAR(50),
+@MIMEType VARCHAR(50),
+@ImageBinary VARBINARY(MAX)
+	
+AS
+	
+INSERT INTO [dbo].[FRS_Image]
+           ([ImageNumber]
+		   ,[FolderName]
+           ,[FileName]
+           ,[MIMEType]
+           ,[ImageBinary])
+     VALUES
+           (@ImageNumber
+			,@FolderName
+			,@FileName
+			,@MIMEType
+			,@ImageBinary)
+
+RETURN
+
+-- Stored Procedure
+
+CREATE PROCEDURE [dbo].[sp_GetEventTypes]
+AS
+
+Select DISTINCT Event FROM FRS_Message
+
+RETURN
+
+GO
+
+
+
+CREATE PROCEDURE [dbo].sp_GetEventSubTypes
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EventSubType FROM FRS_EventSubTypes WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+-- Stored Procedure
+
+CREATE PROCEDURE [dbo].sp_GetEA1
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA1 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA2
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA2 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA3
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA3 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA1
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA1 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA4
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA4 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA5
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA5 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO
+
+
+CREATE PROCEDURE [dbo].sp_GetEA6
+@Event VARCHAR(50)
+AS
+
+Select DISTINCT EA6 FROM FRS_Message WHERE [Event] = @Event
+
+RETURN
+
+GO

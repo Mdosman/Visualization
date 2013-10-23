@@ -1,0 +1,14 @@
+GetTime from EventTime (varchar) column:
+
+Select SUBSTRING(EventTime, 12, LEN(EventTime))  from FRS_Message
+
+
+
+GetTime from EventDate (datetime) column:
+
+SELECT CONVERT(VARCHAR(8),EventDate,108)  from FRS_Message
+
+
+Get Date only from EventDate (datetime) column:
+
+SELECT CONVERT(VARCHAR(10),GETDATE(),111)

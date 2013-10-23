@@ -1,0 +1,54 @@
+
+When opening your child window from the parent, remember the return value in a variable somewhere:
+
+var childWindow = window.open(/* ... */);...and when you want to refresh the child:
+
+childWindow.location.reload();Here's a quick-and-dirty example (live copy):
+
+HTML:
+
+<input type='button' id='btnOpen' value='Open Child'>
+<input type='button' id='btnClose' value='Close Child'>
+<input type='button' id='btnRefresh' value='Refresh Child'>JavaScript:
+
+(function() {
+  var childWindow;
+
+  document.getElementById('btnOpen').onclick = openChildWindow;
+  document.getElementById('btnClose').onclick = closeChildWindow;
+  document.getElementById('btnRefresh').onclick = refreshChildWindow;
+
+  function openChildWindow() {
+    if (childWindow) {
+      alert("We already have one open.");
+    }
+    else {
+      childWindow = window.open('http://jsbin.com/awiri4');
+    }
+  }
+
+  function closeChildWindow() {
+    if (!childWindow) {
+      alert("There is no child window open.");
+    }
+    else {
+      childWindow.close();
+      childWindow = undefined;
+    }
+  }
+
+  function refreshChildWindow() {
+    if (!childWindow) {
+      alert("There is no child window open.");
+    }
+    else {
+      childWindow.location.reload();
+    }
+  }
+})();
+
+Caveat: I would never recommend hooking up event handlers with onclick attributes as above. 
+Instead, I'd use attachEvent (on IE) or addEventListener (on standards-based browsers), 
+by using a library like jQuery, Closure, Prototype, YUI, or any of several others.
+ Used the attributes above to avoid obscuring the main point.
+ 

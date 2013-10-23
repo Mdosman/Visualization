@@ -1,0 +1,36 @@
+﻿http://blog.shamess.info/2009/09/29/zoom-to-fit-all-markers-on-google-maps-api-v3/
+
+==
+
+//  Make an array of the LatLng's of the markers you want to show
+var LatLngList = new Array (new google.maps.LatLng (52.537,-2.061), new google.maps.LatLng (52.564,-2.017));
+//  Create a new viewpoint bound
+var bounds = new google.maps.LatLngBounds ();
+//  Go through each...
+for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+  //  And increase the bounds to take this point
+  bounds.extend (LatLngList[i]);
+}
+//  Fit these bounds to the map
+map.fitBounds (bounds);
+
+==
+
+If you have a list of markers and want to zoom and center them on screen, you can also keep extending bounds object while adding markers to list. So when you want to center map, you will not need to loop all markers again. Good luck
+
+var fMapBounds = new google.maps.LatLngBounds();
+function PlotMarker(Position) { //add a marker to map
+var latlng = new google.maps.LatLng(Position.Longitude);
+var googMarker = new google.maps.Marker({
+position: latlng,
+map: map,
+});
+fMapBounds.extend();
+return googMarker;
+}
+
+function CenterMap() { //just fit it
+if (fMapBounds!= undefined) {
+map.fitBounds(fMapBounds);
+}
+}

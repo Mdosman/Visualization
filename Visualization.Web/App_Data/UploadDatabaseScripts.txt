@@ -1,0 +1,70 @@
+
+CREATE TABLE [dbo].[FRS_Image](
+	[ImageID] [int] IDENTITY(1,1) NOT NULL,
+	[FolderName] [varchar](50) NULL,
+	[FileName] [varchar](50) NULL,
+	[MIMEType] [varchar](50) NULL,
+	[ImageBinary] [varbinary](max) NULL,
+ CONSTRAINT [PK_FRS_Image_1] PRIMARY KEY CLUSTERED 
+(
+	[ImageID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+CREATE TABLE [dbo].[FRS_Message](
+	[MsgID] [int] IDENTITY(1,1) NOT NULL,
+	[Folder] [varchar](50) NULL,
+	[MessageID] [varchar](50) NULL,
+	[SourceID] [varchar](50) NULL,
+	[EventDate] [datetime] NULL,
+	[EventTime] [varchar](50) NULL,
+	[ImageID] [varchar](50) NULL,
+	[ImageName] [varchar](50) NULL,
+	[Lat] [varchar](50) NULL,
+	[Lon] [varchar](50) NULL,
+	[CamPAN] [varchar](50) NULL,
+	[CamTILT] [varchar](50) NULL,
+	[EnvLocation] [varchar](50) NULL,
+	[SubLocation] [varchar](50) NULL,
+	[Event] [varchar](50) NULL,
+	[EventID] [varchar](50) NULL,
+	[EA1] [varchar](50) NULL,
+	[EA2] [varchar](50) NULL,
+	[EA3] [varchar](50) NULL,
+	[EA4] [varchar](50) NULL,
+	[EA5] [varchar](50) NULL,
+	[EA6] [varchar](50) NULL,
+	[GroupID] [varchar](50) NULL,
+	[Conf] [varchar](50) NULL,
+ CONSTRAINT [PK_FRS_Message_1] PRIMARY KEY CLUSTERED 
+(
+	[MsgID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[FRS_EventSubTypes](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Event] [varchar](50) NULL,
+	[EventSubType] [varchar](50) NULL
+ CONSTRAINT [PK_FRS_EventSubTypes_1] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
