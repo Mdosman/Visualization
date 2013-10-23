@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>Filter Options</title>
 
     <script src="../Scripts/jQuery/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="../Scripts/jQuery/jquery.dynDateTime.min.js" type="text/javascript"></script>
@@ -424,11 +424,14 @@
                     <asp:TextBox ID="txtLocation" runat="server" Width="120px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkFilters" Text="Filters" OnClientClick="return false;" runat="server"></asp:LinkButton>
+                    <asp:LinkButton ID="lnkFilters" Text="Filters/Categories" OnClientClick="return false;" runat="server"></asp:LinkButton>
                     <%--<asp:LinkButton ID="lnkClearFilters" Text="Filters" OnClientClick="return false;" runat="server"></asp:LinkButton>--%>
                 </td>
                 <td>
                     <asp:LinkButton ID="lnkUpload" Text="Upload" PostBackUrl="~/WebForms/Upload.aspx" runat="server"></asp:LinkButton>
+                </td>
+                <td>                    
+                    <asp:LinkButton ID="lnkTree" Text="Chart Page" PostBackUrl="~/WebForms/Chart.aspx" runat="server"></asp:LinkButton>
                 </td>
             </tr>  
         </table>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Chart</title>
+    <title>PSS-VA</title>
     <link href="../Styles/layout-default-latest.css" rel="stylesheet" type="text/css" />
     <link href="../Styles/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
@@ -89,8 +89,21 @@
         <asp:TextBox ID="txtLatLon" Style="position: absolute; left: -500px" runat="server"></asp:TextBox>
         <table align="center">
             <tr>
-                <td align="left">
-                    <asp:Label ID="lblMsgCount" runat="server" Text="Count: 0"></asp:Label>
+                <td>
+                    <asp:LinkButton ID="lnkDefault" Text="Filter Options" PostBackUrl="~/WebForms/Default.aspx"
+                        runat="server"></asp:LinkButton>
+                </td>
+                <td width="20px">
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkUpload" Text="Upload Page" PostBackUrl="~/WebForms/Upload.aspx"
+                        runat="server" CssClass="Label"></asp:LinkButton>
+                </td>
+                <td width="20px">
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkMappingPage" Text="Process Page" Enabled="false" PostBackUrl="~/WebForms/Default.aspx"
+                        runat="server"></asp:LinkButton>
                 </td>
                 <td width="20px">
                 </td>
@@ -110,18 +123,6 @@
                     <asp:LinkButton ID="lnkBarChart" runat="server" CssClass="Label" CausesValidation="false"
                         OnClientClick="viewBarChart(); return false;">BarChart</asp:LinkButton>
                 </td>
-                <td width="20px">
-                </td>
-                <td>
-                    <asp:LinkButton ID="lnkUpload" Text="Upload Page" PostBackUrl="~/WebForms/Upload.aspx"
-                        runat="server" CssClass="Label"></asp:LinkButton>
-                </td>
-                <td width="20px">
-                </td>
-                <td>
-                    <asp:LinkButton ID="lnkDefault" Text="Filter Options" PostBackUrl="~/WebForms/Default.aspx"
-                        runat="server"></asp:LinkButton>
-                </td>
             </tr>
         </table>
         <table align="center">
@@ -138,6 +139,11 @@
                 </td>
                 <td>
                     <input id="btnParseResults" type="button" value="Parse Results" onclick="ParseResults();" />
+                </td>
+                <td width="50px">
+                </td>
+                <td align="right">
+                    <asp:Label ID="lblMsgCount" runat="server" Text="Count: 0"></asp:Label>
                 </td>
             </tr>
         </table>
