@@ -9,11 +9,8 @@
         createLayouts();
         CreateTabs();
         window.setTimeout(LoadMap, 10);
-        //window.setTimeout(RefreshMessages, 20);
-        //window.setTimeout(RefreshMarkers, 30);
-        //window.setTimeout(CreateBarGraph, 1500);  
-        window.setTimeout(onChecked, 150);
-        window.setTimeout(onUnChecked, 150);
+        //window.setTimeout(onChecked, 150);
+        //window.setTimeout(onUnChecked, 150);
 
         $('#ddlSQLQuery').keypress(function() {
             OnSavedSQLQueryChange();
@@ -238,26 +235,7 @@
         map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
         markerCluster = new MarkerClusterer(map);
     }
-
-    //    //Old Working Maps without markerclusterer
-
-    //    function SetMarkers(strLatLonJSON) {
-    //        marker = [];        
-    //        if (strLatLonJSON != undefined) {
-    //            if (strLatLonJSON.length > 0) {
-    //                var objLatLon = jQuery.parseJSON(strLatLonJSON);
-    //                for (var i = 0; i < objLatLon.length; i++) {
-    //                    var latLng = new google.maps.LatLng(objLatLon[i].Lat, objLatLon[i].Lon);
-    //                    marker[i] = new google.maps.Marker({
-    //                        position: latLng
-    //                    });
-    //                }
-    //            }
-    //        }
-    //        for (var i = 0; i < marker.length; i++) {
-    //            marker[i].setMap(map);
-    //        }
-    //    }
+  
 
     function SetMarkers(strLatLonJSON) {
         if (strLatLonJSON != undefined) {
@@ -455,38 +433,6 @@
         $("#txtEventAttributeSubTypeList").val(eventAttributeSubTypes);
     }
 
-//    var CreateBarGraph = function () {
-////        var eventDateFrom = $("#txtEventDateFrom").val();
-////        var eventDateTo = $("#txtEventDateTo").val();
-////        var sqlQuery = $('#ddlSQLQuery option:selected').val();
-////        var cam = $('#ddlCam option:selected').val(); 
-////        var event = $("#txtEventList").val();
-////        var eAttr = $("#txtEventAttributeTypeList").val();
-////        var eAttrSub = $("#txtEventAttributeSubTypeList").val(); 
-////        
-////        var objX = new Object();
-////        objX.RD_EventDateFrom = eventDateFrom;
-////        objX.RD_EventDateTo = eventDateTo;
-////        objX.RD_Cam = cam;
-////        objX.RD_SQLQueryID = sqlQuery;
-////        objX.RD_FQuery = {};
-////        if(sqlQuery == 0) {
-////            objX.RD_FQuery.FQ_EventType = event;
-////            objX.RD_FQuery.FQ_EventAttr = eAttr;
-////            objX.RD_FQuery.FQ_EventAttrSub = eAttrSub;
-////        }
-////        var jsonStr = JSON.stringify(objX);
-//                
-//        var ts = Math.round(new Date().getTime() / 1000);
-//        
-//        jQuery.ajax({
-//            type: "GET",
-//            url: "../HttpHandler/MessageHandler.ashx?operation=BarGraph&RequestData=&ts=" + ts,
-//            success: createChart,
-//            error: errorFn
-//        });
-//    };
-
     var CreateTabs = function () {
         $("#tabs").tabs();
     };
@@ -498,7 +444,6 @@
             RefreshMarkers();
             RefreshMessages();
             ClearValues();
-            //CreateBarGraph();
         });
     };
 
@@ -509,39 +454,27 @@
             RefreshMarkers();
             RefreshMessages();
             ClearValues();
-            //CreateBarGraph();
         });
     };
-    
-//    function CheckAll() {
-//         $("#demo").jstree("check_all");
-//    }
-//    
-//    function UnCheckAll() {
-//         $("#demo").jstree("uncheck_all");
-//    }
     
     function OnSavedSQLQueryChange() {
         $("#demo").jstree("uncheck_all");
         ClearJSTreeTextBoxes();
         ClearValues();
         RefreshMarkers();
-        RefreshMessages();
-        //CreateBarGraph();         
+        RefreshMessages();         
     }
     
     function OnCamChange() {
         ClearValues();
         RefreshMarkers();
-        RefreshMessages(); 
-        //CreateBarGraph();   
+        RefreshMessages();    
     }
     
     function OnTMLChange() {
         ClearValues();
         RefreshMarkers();
-        RefreshMessages(); 
-        //CreateBarGraph();   
+        RefreshMessages();  
     }
     
     function ClearValues() {
@@ -573,112 +506,4 @@
     function ManageSavedQueries() {
         window.open("ManageSavedQuery.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=730,height=320,'oChild'");
     }
-        
-    
-//        function createChart(data) {
-//            var newSeriesOptions = '';
-//            if (data != undefined) {
-//                if (data.length > 0) {
-//                    newSeriesOptions = jQuery.parseJSON(data);
-//                }
-//            }
-//            // Create the chart
-//            window.chart = new Highcharts.StockChart({
-//                chart: {
-//                    renderTo: 'divBar',
-//                    alignTicks: false
-//                },
-//                yAxis: {
-//                    min: 0,
-//                    title: {
-//                        text: 'Events'
-//                    },
-//                    stackLabels: {
-//                        enabled: true,
-//                        style: {
-//                            fontWeight: 'bold',
-//                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-//                        }
-//                    }
-//                },
-//                stackLabels: {
-//                    enabled: true,
-//                    style: {
-//                        fontWeight: 'bold',
-//                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-//                    }
-//                },
-//                legend: {
-//                    align: 'right',
-//                    x: -70,
-//                    verticalAlign: 'top',
-//                    y: 20,
-//                    floating: true,
-//                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
-//                    borderColor: '#CCC',
-//                    borderWidth: 1,
-//                    shadow: false
-//                },
-//                rangeSelector: {
-//                    buttons: [{
-//                        count: 1,
-//                        type: 'minute',
-//                        text: '1M'
-//                    }, {
-//                        count: 5,
-//                        type: 'minute',
-//                        text: '5M'
-//                    }, {
-//                        type: 'all',
-//                        text: 'All'
-//                    }],
-//                    inputEnabled: false,
-//                    selected: 2
-//                },
-
-//                title: {
-//                    text: 'Live random data'
-//                },
-//                credits: {
-//                    enabled: false
-//                },
-//                exporting: {
-//                    enabled: false
-//                },
-//                plotOptions: {
-//                    column: {
-//                        stacking: 'normal',
-//                        dataLabels: {
-//                            enabled: true,
-//                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-//                        }
-//                    },
-//                    series: {
-//                        cursor: 'pointer',
-//                        point: {
-//                            events: {
-//                                click: function () {
-//                                    hs.htmlExpand(null, {
-//                                        pageOrigin: {
-//                                            x: this.pageX,
-//                                            y: this.pageY
-//                                        },
-//                                        headingText: this.series.name,
-//                                        maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' + this.y + ' ' + '<br/><img src="../Pics/' + this.x + '.bmp" alt="Highslide JS" title="Click to enlarge" />',
-//                                        width: 350,
-//                                        height: 350
-
-
-//                                    });
-//                                }
-//                            }
-//                        },
-//                        marker: {
-//                            lineWidth: 1
-//                        }
-//                    }
-//                },
-//                series: newSeriesOptions
-
-//            });
-//        }
+       
