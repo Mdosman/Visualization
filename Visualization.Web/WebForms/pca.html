@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PCA</title>
+    
+    <script type="text/javascript" src="numeric-1.2.6.min.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function pca(X) {
+            /*
+                Return matrix of all principle components as column vectors
+            */
+            var m = X.length;
+            var sigma = numeric.div(numeric.dot(numeric.transpose(X), X), m);
+            return numeric.svd(sigma).U;
+        }
+
+        function pcaReduce(U, k) {
+            /*
+                Return matrix of k first principle components as column vectors            
+            */
+            return U.map(function (row) {
+                return row.slice(0, k)
+            });
+        }
+
+        function pcaProject(X, Ureduce) {
+            /*
+                Project matrix X onto reduced principle components matrix
+            */
+            return numeric.dot(X, Ureduce);
+        }
+
+        function pcaRecover(Z, Ureduce) {
+            /*
+                Recover matrix from projection onto reduced principle components
+            */
+            return numeric.dot(Z, numeric.transpose(Ureduce));
+        }
+
+        window.onload = function () {
+            var x, y, X = [];
+
+            var noise = function () { return Math.random() * 0.02 - 0.01 };
+
+            // Create random dataset with slope of 0.357 and noise
+            for (var i = 0; i < 1000; i++) {
+                x = Math.random() * 2 - 1;
+                y = x * 0.357;
+                X.push([x + noise(), y + noise()]);
+            }
+
+            // Get principle components
+            var U = pca(X);
+            //document.write(X);
+            //document.write(U);
+            // Print slope of first principle component
+            document.write(Math.abs(U[0][1] / U[0][0]).toFixed(3));
+
+            document.write("<table><tr><th width=\"150\">PCA1<th width=\"150\">PCA2</tr>");
+
+            for (var a = 0; a < 2; a++) {
+                document.write("<tr><td align='center'>" + U[a][0] + "</td><td align='center'>" + U[a][1] + "</td></tr>");
+            }
+            document.write("</table>");
+        };
+
+    </script>
+</body>
+</html>
