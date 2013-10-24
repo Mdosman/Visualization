@@ -226,6 +226,66 @@
         }
     }
 
+    function SaveFilteredMessagesSuccess(message) {
+        if (message != undefined) {
+            if (message.length > 0) {
+                alert(message);
+            }
+        }
+    }
+
+    var SaveFilteredMessages = function () {
+        var filteredMessageName = $("#txtSaveFilteredMessagesName").val();
+        var filteredMessage = $("#txtMessages").val();
+        if (filteredMessageName.trim().length == 0 || filteredMessage.trim().length == 0) {
+            if (filteredMessageName.trim().length == 0) {
+                alert('Please enter a unique name for Result Messages!');
+            }
+            if (filteredMessage.trim().length == 0) {
+                alert('There are no results to Save!');
+            }
+        }
+        else {
+            var eventDateFrom = $("#txtEventDateFrom").val();
+            var eventDateTo = $("#txtEventDateTo").val();
+            var sqlQuery = $('#ddlSQLQuery option:selected').val();
+            var cam = $('#ddlCam option:selected').val();
+            var tml = $('#ddlTML option:selected').val();
+            var event = $("#txtEventList").val();
+            var eAttr = $("#txtEventAttributeTypeList").val();
+            var eAttrSub = $("#txtEventAttributeSubTypeList").val();
+            var processId = $("#txtProcessId").val();
+            var processSubTypeId = $("#txtProcessSubTypeId").val();
+            var parseText = $("#txtParseInput").val();
+            var objX = new Object();
+            objX.RD_EventDateFrom = eventDateFrom;
+            objX.RD_EventDateTo = eventDateTo;
+            objX.RD_Cam = cam;
+            objX.RD_TML = tml;
+            objX.RD_SQLQueryID = sqlQuery;
+            objX.RD_FilteredMessageName = filteredMessageName;
+            objX.RD_FilteredMessage = filteredMessage;
+            objX.RD_FQuery = {};
+            if (sqlQuery == 0) {
+                objX.RD_FQuery.FQ_EventType = event;
+                objX.RD_FQuery.FQ_EventAttr = eAttr;
+                objX.RD_FQuery.FQ_EventAttrSub = eAttrSub;
+                objX.RD_FQuery.FQ_PID = processId;
+                objX.RD_FQuery.FQ_PSID = processSubTypeId;
+            }
+            var jsonStr = JSON.stringify(objX);
+
+            var ts = Math.round(new Date().getTime() / 1000);
+
+            jQuery.ajax({
+                type: "GET",
+                url: "../HttpHandler/MessageHandler.ashx?operation=SaveFilteredMessages&RequestData=" + jsonStr + "&ts=" + ts,
+                success: SaveFilteredMessagesSuccess,
+                error: errorFn
+            });
+        }
+    }
+
     var LoadMap = function () {
         mapOptions = {
             center: new google.maps.LatLng(36.167597, -86.787186),
@@ -506,4 +566,13 @@
     function ManageSavedQueries() {
         window.open("ManageSavedQuery.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=730,height=320,'oChild'");
     }
-       
+
+    function viewLDA() {
+        window.open("LDA.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=850,'oChild'");
+    }
+    function viewPCA() {
+        window.open("PCA.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=850,'oChild'");
+    }
+    function viewVSM() {
+        window.open("VSM.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=850,'oChild'");
+    }

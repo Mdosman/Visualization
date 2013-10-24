@@ -123,6 +123,24 @@
                     <asp:LinkButton ID="lnkBarChart" runat="server" CssClass="Label" CausesValidation="false"
                         OnClientClick="viewBarChart(); return false;">BarChart</asp:LinkButton>
                 </td>
+                <td width="20px">
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkLDA" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewLDA(); return false;">LDA</asp:LinkButton>
+                </td>
+                <td width="20px">
+                </td>
+                <td align="left">
+                    <asp:LinkButton ID="lnkPCA" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewPCA(); return false;">PCA</asp:LinkButton>
+                </td>
+                <td width="20px">
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkVSM" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewVSM(); return false;">VSM</asp:LinkButton>
+                </td>
             </tr>
         </table>
         <table align="center">
@@ -270,6 +288,13 @@
                     </tr>
                 </table>
             </fieldset>
+            
+            <br />
+            <br />
+            <div>
+                <input id="txtSaveFilteredMessagesName" type="text" />
+                <input id="Button1" type="button" value="Save Filtered Msgs" onclick="SaveFilteredMessages();" />
+            </div>
         </div>
     </div>
     </form>

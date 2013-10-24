@@ -52,7 +52,9 @@ namespace Visa
             public string RD_Cam { get; set; }
             public string RD_TML { get; set; }
             public string RD_SQLQueryID { get; set; }
-            public string RD_QueryName { get; set; }            
+            public string RD_QueryName { get; set; }
+            public string RD_FilteredMessage { get; set; }
+            public string RD_FilteredMessageName { get; set; }
             public FullQuery RD_FQuery { get; set; }
 
         }
@@ -465,6 +467,25 @@ namespace Visa
                             break;
                         }
                         
+                    #endregion SaveQuery
+
+                    #region SaveFilteredMessages
+
+                    case "SaveFilteredMessages":
+                        {
+                            try
+                            {
+                                Message msg = new Message(requestData);
+                                //ParseRequestData(requestData,msg);
+                                strResponse = msg.SaveFilteredMessages();
+                            }
+                            catch (Exception ex)
+                            {
+                                strResponse = "Error, Filtered Messages not saved. Please try again.";
+                            }
+                            break;
+                        }
+
                     #endregion SaveQuery
 
                     default:

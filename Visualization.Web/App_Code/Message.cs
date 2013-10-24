@@ -41,6 +41,8 @@ namespace Visa
         public string QueryName { get; set; }
         public string ProcessId { get; set; }
         public string ProcessSubTypeId { get; set; }
+        public string  FilteredMessage { get; set; }
+        public string FilteredMessageName { get; set; }
 
         #endregion Properties
 
@@ -56,6 +58,8 @@ namespace Visa
             TML = data.RD_TML;
             SQLQueryID = data.RD_SQLQueryID;
             QueryName = data.RD_QueryName;
+            FilteredMessage = data.RD_FilteredMessage;
+            FilteredMessageName = data.RD_FilteredMessageName;
             EventType = data.RD_FQuery.FQ_EventType;
             EventAttr = data.RD_FQuery.FQ_EventAttr;
             EventAttrSub = data.RD_FQuery.FQ_EventAttrSub;
@@ -905,6 +909,49 @@ namespace Visa
                 return ds;
             }
         }
+        #endregion
+
+
+        #region Save Filtered Messages
+
+        public string SaveFilteredMessages()
+        {
+            try
+            {
+                string strStagingDbConnectionString = ConfigurationManager.ConnectionStrings["CTS"].ConnectionString.ToString();
+                using (SqlConnection objCon = new SqlConnection(strStagingDbConnectionString))
+                {
+                    using (SqlCommand objSqlCmd = new SqlCommand("sp_SaveFilteredMessages", objCon))
+                    {
+                        objCon.Open();
+                        objSqlCmd.CommandType = CommandType.StoredProcedure;
+                        objSqlCmd.Parameters.Add("@FilteredMessageName", SqlDbType.VarChar);
+                        objSqlCmd.Parameters["@FilteredMessageName"].Value = this.FilteredMessageName;
+                        objSqlCmd.Parameters.Add("@FilteredMessage", SqlDbType.VarChar);
+                        objSqlCmd.Parameters["@FilteredMessage"].Value = this.FilteredMessage;
+                        objSqlCmd.Parameters.Add("@FilteredMessageDescription", SqlDbType.VarChar);
+                        objSqlCmd.Parameters["@FilteredMessageDescription"].Value = this.ProcessId + "-" + this.ProcessSubTypeId + "-" + this.SQLQueryID + this.EventType + "-" + this.EventAttr + "-" + this.EventAttrSub + "-" + this.Cam + "-" + this.TML + this.EventDateFrom + "-" + this.EventDateTo;
+                        int result = objSqlCmd.ExecuteNonQuery();
+
+                        if (result == -1)
+                        {
+                            return "Error, Duplicate Filtered Message Name.";
+                        }
+                        else
+                        {
+                            return "Filtered Message saved successfully.";
+                        }
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return "Error, Query not saved. Please try again.";
+            }
+        }
+
         #endregion
 
     }
