@@ -954,6 +954,101 @@ namespace Visa
 
         #endregion
 
+        #region LoadSavedFilteredMessages
+
+        public static DataSet LoadSavedFilteredMessages(int iPageIndex, int iRowsPerPage)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                string strStagingDbConnectionString = ConfigurationManager.ConnectionStrings["CTS"].ConnectionString.ToString();
+
+                using (SqlConnection objCon = new SqlConnection(strStagingDbConnectionString))
+                {
+                    using (SqlCommand objSqlCmd = new SqlCommand("sp_GetSavedFilteredMessages", objCon))
+                    {
+                        objCon.Open();
+                        objSqlCmd.CommandType = CommandType.StoredProcedure;
+                        objSqlCmd.Parameters.Add("@PageIndex", SqlDbType.Int);
+                        objSqlCmd.Parameters["@PageIndex"].Value = iPageIndex;
+                        objSqlCmd.Parameters.Add("@NumRows", SqlDbType.Int);
+                        objSqlCmd.Parameters["@NumRows"].Value = iRowsPerPage;
+                        da.SelectCommand = objSqlCmd;
+                        da.Fill(ds);
+
+                        return ds;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ds;
+            }
+        }
+
+        #endregion
+
+
+
+        #region Delete Query
+
+        public static void DeleteSavedFilteredMessage(int iFilteredMessageId)
+        {
+            try
+            {
+                string strStagingDbConnectionString = ConfigurationManager.ConnectionStrings["CTS"].ConnectionString.ToString();
+                using (SqlConnection objCon = new SqlConnection(strStagingDbConnectionString))
+                {
+                    using (SqlCommand objSqlCmd = new SqlCommand("sp_DeleteSavedFilteredMessage", objCon))
+                    {
+                        objCon.Open();
+                        objSqlCmd.CommandType = CommandType.StoredProcedure;
+                        objSqlCmd.Parameters.Add("@FilteredMessageId", SqlDbType.Int);
+                        objSqlCmd.Parameters["@FilteredMessageId"].Value = iFilteredMessageId;
+                        objSqlCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        #endregion
+
+        #region Edit Query
+
+        public static void EditSavedFilteredMessage(int iFilteredMessageId, string strFilteredMessageDescription)
+        {
+            try
+            {
+                string strStagingDbConnectionString = ConfigurationManager.ConnectionStrings["CTS"].ConnectionString.ToString();
+                using (SqlConnection objCon = new SqlConnection(strStagingDbConnectionString))
+                {
+                    using (SqlCommand objSqlCmd = new SqlCommand("sp_EditSavedFilteredMessage", objCon))
+                    {
+                        objCon.Open();
+                        objSqlCmd.CommandType = CommandType.StoredProcedure;
+                        objSqlCmd.Parameters.Add("@FilteredMessageId", SqlDbType.Int);
+                        objSqlCmd.Parameters["@FilteredMessageId"].Value = iFilteredMessageId;
+                        objSqlCmd.Parameters.Add("@FilteredMessageDesc", SqlDbType.VarChar);
+                        objSqlCmd.Parameters["@FilteredMessageDesc"].Value = strFilteredMessageDescription;
+                        objSqlCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        #endregion
+
+
     }
 
 }

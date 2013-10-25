@@ -566,6 +566,14 @@
     function ManageSavedQueries() {
         window.open("ManageSavedQuery.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=730,height=320,'oChild'");
     }
+    
+    function ManageSavedFilteredMessages() {
+        window.open("ManageSavedFilteredMessages.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=750,'oChild'");
+    }
+
+    function viewMappingPage() {
+        window.open("Mapping.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=850,'oChild'");
+    }
 
     function viewLDA() {
         window.open("LDA.aspx", "View", "status=no,toolbar=no,menubar=no,resizable=1,width=1050,height=850,'oChild'");

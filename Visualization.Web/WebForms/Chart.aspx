@@ -102,8 +102,8 @@
                 <td width="20px">
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkMappingPage" Text="Process Page" Enabled="false" PostBackUrl="~/WebForms/Default.aspx"
-                        runat="server"></asp:LinkButton>
+                    <asp:LinkButton ID="lnkMappingPage" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewMappingPage(); return false;">Process</asp:LinkButton>
                 </td>
                 <td width="20px">
                 </td>
@@ -168,24 +168,7 @@
     </div>
     <div class="outer-center">
         <!-- Middle Layout Container -->
-        <div id="tabs">
-            <ul>
-                <li><a href="#tabMap">Map</a></li>
-                <li><a href="#tabBar">Bar</a></li>
-                <li><a href="#tabGraph">Graph</a></li>
-            </ul>
-            <div id="tabMap">
-                <div id="map-canvas" style="width: 1150px; height: 720px">
-                </div>
-            </div>
-            <div id="tabBar">
-                <div id="divBar" style="width: 1150px; height: 720px">
-                </div>
-            </div>
-            <div id="tabGraph">
-                <div id="divGraph" style="width: 1150px; height: 720px">
-                </div>
-            </div>
+        <div id="map-canvas" style="width: 1150px; height: 750px">
         </div>
     </div>
     <div class="outer-east">
@@ -294,6 +277,8 @@
             <div>
                 <input id="txtSaveFilteredMessagesName" type="text" />
                 <input id="Button1" type="button" value="Save Filtered Msgs" onclick="SaveFilteredMessages();" />
+                <asp:LinkButton ID="lnkManageSavedFilteredMessages" runat="server" CssClass="Label" CausesValidation="false"
+                    OnClientClick="ManageSavedFilteredMessages(); return false;">Edit</asp:LinkButton>
             </div>
         </div>
     </div>

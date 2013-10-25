@@ -26,7 +26,6 @@ public class Upload
 
 	public Upload()
 	{
-       
 	}
     
     public static void LogEvent(string Message)
@@ -35,7 +34,8 @@ public class Upload
         try
         {
             //string LOG_FILE = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "ApplicationLog.txt");
-            string LOG_FILE = @"C:\WebProject\ApplicationLog.txt";
+            
+            string LOG_FILE = HttpContext.Current.Server.MapPath("~/App_Data/") + "ApplicationLog.txt";
             writer = new StreamWriter(LOG_FILE, true, System.Text.Encoding.ASCII);
             writer.WriteLine("======================================================");
             writer.WriteLine(String.Format("Log Message - {0} - {1}", DateTime.Now.ToString("MM-dd-yyyy:HH-mm-ss-fff", CultureInfo.InvariantCulture), Message));
@@ -144,8 +144,7 @@ public class Upload
                                 objSqlBulkCopy.ColumnMappings.Add("MessageID", "MessageID");
                                 objSqlBulkCopy.ColumnMappings.Add("SourceID", "SourceID");
                                 objSqlBulkCopy.ColumnMappings.Add("Date", "EventDate");
-                                objSqlBulkCopy.ColumnMappings.Add("ImageID", "ImageID");
-                                objSqlBulkCopy.ColumnMappings.Add("ImageID", "ImageName");
+                                objSqlBulkCopy.ColumnMappings.Add("ImageName", "ImageName");
                                 objSqlBulkCopy.ColumnMappings.Add("LAT", "Lat");
                                 objSqlBulkCopy.ColumnMappings.Add("LON", "Lon");
                                 objSqlBulkCopy.ColumnMappings.Add("CamPAN", "CamPAN");
@@ -161,7 +160,9 @@ public class Upload
                                 objSqlBulkCopy.ColumnMappings.Add("EA5", "EA5");
                                 objSqlBulkCopy.ColumnMappings.Add("EA6", "EA6");
                                 objSqlBulkCopy.ColumnMappings.Add("GroupID", "GroupID");
-                                objSqlBulkCopy.ColumnMappings.Add("Conf", "Conf");
+                                objSqlBulkCopy.ColumnMappings.Add("Conf", "Conf"); 
+                                objSqlBulkCopy.ColumnMappings.Add("ProcessId", "ProcessId");
+                                objSqlBulkCopy.ColumnMappings.Add("SubProcessTypeId", "SubProcessTypeId");
 
                                 objSqlBulkCopy.DestinationTableName = "FRS_Message";
                                 objSqlBulkCopy.WriteToServer(objOleDbReader);
@@ -250,42 +251,67 @@ public class Upload
     {
         try
         {
-            //Get array of file names in the C:\Upload directory.
-            string[] myFiles = Directory.GetFiles(UploadImagesFolder);
 
-            foreach (string myFile in myFiles)
+            if (!Directory.Exists(HttpContext.Current.Server.MapPath("~/Pictures/")))
             {
-                //Copy file to InProcess folder
-                //string strFileName = Path.GetFileName(myFile);
-                //string strInProcessFile = Path.Combine(InProcessFolder, strFileName);
-                //MoveFile(myFile, strInProcessFile);
-                FileInfo currentFileToProcessInfo = new FileInfo(myFile);
-                LogEvent(string.Format("Processing File Started :{0} ", myFile));
-                try
+               Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/Pictures/"));
+            }
+            string strPicturesFolder = HttpContext.Current.Server.MapPath("~/Pictures/");
+
+            //Get array of file names in the C:\Upload directory.
+
+            // Recurse into subdirectories of this directory. 
+            string[] subdirectoryEntries = Directory.GetDirectories(UploadImagesFolder);
+            foreach (string subdirectory in subdirectoryEntries)
+            {
+
+
+                string[] myFiles = Directory.GetFiles(subdirectory);
+
+                foreach (string myFile in myFiles)
                 {
-                    string strMIMEType = @"image/bmp";
-                    FileStream fs = File.OpenRead(currentFileToProcessInfo.FullName);
-                    byte[] imgBytes = new byte[fs.Length];
-                    fs.Read(imgBytes, 0, Convert.ToInt32(fs.Length));
-
-                    bool blnImportedSuccesfully = Import(imgBytes, strMIMEType, currentFileToProcessInfo.Name);
-
-                    fs.Close();
-                    if (blnImportedSuccesfully)
+                    FileInfo currentFileToProcessInfo = new FileInfo(myFile);
+                    LogEvent(string.Format("Processing File Started :{0} ", myFile));
+                    try
                     {
-                        LogEvent(myFile + " upload successfully.");
+                        string strMIMEType = @"image/bmp";
+                        FileStream fs = File.OpenRead(currentFileToProcessInfo.FullName);
+                        byte[] imgBytes = new byte[fs.Length];
+                        fs.Read(imgBytes, 0, Convert.ToInt32(fs.Length));
+
+                        char[] MyChar = { '\\' };
+
+                        string strImageFoldername = myFile.Replace(UploadImagesFolder, string.Empty);
+                        strImageFoldername = strImageFoldername.Replace(currentFileToProcessInfo.Name, string.Empty).Trim(MyChar);
+
+                        bool blnImportedSuccesfully = Import(imgBytes, strMIMEType, currentFileToProcessInfo.Name, strImageFoldername);
+
+                        fs.Close();
+                        if (blnImportedSuccesfully)
+                        {
+                            LogEvent(myFile + " upload successfully.");
+                        }
+                        else
+                        {
+                            LogEvent("Error. " + myFile + " could not uploaded");
+                        }
+
+                        //Copy file to Pictures folder
+                        string strImageSubDir = Path.Combine(strPicturesFolder, strImageFoldername);
+
+                        if (!Directory.Exists(strImageSubDir))
+                        {
+                            Directory.CreateDirectory(strImageSubDir);
+                        }
+                        //string strImageDir = Path.Combine(strImageSubDir, currentFileToProcessInfo.Name);
+
+                        File.Move(myFile, Path.Combine(strImageSubDir, currentFileToProcessInfo.Name));
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        LogEvent("Error. " + myFile + " could not uploaded");
+                        LogEvent(ex.ToString());
                     }
                 }
-                catch (Exception ex)
-                {
-                    LogEvent(ex.ToString());
-                }
-
-                LogEvent(string.Format("Processing File Ended :{0} ", myFile));
             }
 
         }
@@ -295,14 +321,15 @@ public class Upload
         }
     }
 
-    private static bool Import(byte[] imgBytes, string strFileType, string strFileName)
+    private static bool Import(byte[] imgBytes, string strFileType, string strFileName, string strImageFoldername)
     {
         string strStagingDbConnectionString = ConfigurationManager.ConnectionStrings["CTS"].ConnectionString.ToString();
 
-        string[] strTemp = strFileName.Split('-');
-        string strFolderName = strTemp[1].Substring(0, 2);
+        string[] strTemp = strFileName.Split('.');
+        //string strFolderName = strTemp[1].Substring(0, 2);
         int intImageNumber;
-        if (int.TryParse(strTemp[1].Substring(2, 6), out intImageNumber))
+        int iLength = strTemp[0].Length;
+        if (int.TryParse(strTemp[0].Substring(iLength-5, 5), out intImageNumber))
         {
             using (SqlConnection objCon = new SqlConnection(strStagingDbConnectionString))
             {
@@ -312,7 +339,7 @@ public class Upload
                     objOleDbCmd.CommandType = CommandType.StoredProcedure;
 
                     objOleDbCmd.Parameters.Add("@FolderName", SqlDbType.VarChar);
-                    objOleDbCmd.Parameters["@FolderName"].Value = strFolderName;
+                    objOleDbCmd.Parameters["@FolderName"].Value = strImageFoldername;
                     objOleDbCmd.Parameters.Add("@FileName", SqlDbType.VarChar);
                     objOleDbCmd.Parameters["@FileName"].Value = strFileName;
                     objOleDbCmd.Parameters.Add("@MIMEType", SqlDbType.VarChar);

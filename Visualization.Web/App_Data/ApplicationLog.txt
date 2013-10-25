@@ -1,176 +1,292 @@
 ======================================================
-Log Message - 07-11-2013:16-23-55-914 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-43-14-623 - Processing File Started :C:\UploadImages\untitled.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-23-55-992 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-43-14-626 - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 317
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 281
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-05-817 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-44-28-921 - Processing File Started :C:\UploadImages\untitled.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-05-897 - System.Data.OleDb.OleDbException: No value given for one or more required parameters.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+Log Message - 10-25-2013:15-44-28-932 - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 317
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 281
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-05-899 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-46-35-000 - Processing File Started :C:\UploadImages\untitled.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-52-402 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-47-57-390 - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName)
+   at Upload.UploadImages(String UploadImagesFolder)
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-52-609 - System.InvalidOperationException: The given ColumnName 'FolderName' does not match up with any column in data source. ---> System.IndexOutOfRangeException: FolderName
-   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   at System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
-   --- End of inner exception stack trace ---
-   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
-   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 164
+Log Message - 10-25-2013:15-48-37-382 - Processing File Started :C:\UploadImages\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-25-52-612 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-48-41-965 - C:\UploadImages\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-26-42-526 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-50-37-253 - Processing File Started :C:\UploadImages\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-27-06-144 - System.Data.OleDb.OleDbException: Syntax error (missing operator) in query expression 'Test FolderName'.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+Log Message - 10-25-2013:15-50-37-258 - C:\UploadImages\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-27-06-145 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-57-33-503 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-27-25-939 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-57-33-526 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-27-56-426 - System.Data.OleDb.OleDbException: No value given for one or more required parameters.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 134
+Log Message - 10-25-2013:15-57-56-589 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-27-56-427 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-57-56-591 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-28-09-739 - Processing File Started :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-58-40-422 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-11-2013:16-28-17-756 - Processing File Ended :C:\UploadMessages\Test.xls 
+Log Message - 10-25-2013:15-58-40-438 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-10-04-626 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:15-59-09-297 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-10-04-788 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:15-59-09-299 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-16-16-479 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-07-39-677 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-16-16-624 - System.Data.SqlClient.SqlException: Received an invalid column length from the bcp client for colid 5.
-   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
-   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
-   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
-   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   at System.Data.SqlClient.SqlBulkCopy.WriteToServerInternal()
-   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
-   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 164
+Log Message - 10-25-2013:16-07-39-681 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-16-16-627 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-13-13-405 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-21-56-430 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-13-13-408 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-22-31-739 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+Log Message - 10-25-2013:16-14-29-052 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-22-31-741 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-16-16-571 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-25-13-812 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-16-42-560 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-25-30-595 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+Log Message - 10-25-2013:16-16-44-491 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-25-30-597 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-18-47-684 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-25-31-836 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-20-08-800 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-26-08-468 - System.Data.OleDb.OleDbException: Syntax error in FROM clause.
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader()
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 138
+Log Message - 10-25-2013:16-20-08-801 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-26-08-470 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-20-08-803 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-34-11-712 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-22-34-003 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-34-11-929 - System.Data.SqlClient.SqlException: Received an invalid column length from the bcp client for colid 5.
-   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
-   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
-   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
-   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   at System.Data.SqlClient.SqlBulkCopy.WriteToServerInternal()
-   at System.Data.SqlClient.SqlBulkCopy.WriteRowSourceToServer(Int32 columnCount)
-   at System.Data.SqlClient.SqlBulkCopy.WriteToServer(IDataReader reader)
-   at Upload.ParseImportFile(String strFile) in c:\WebProject\App_Code\Upload.cs:line 167
+Log Message - 10-25-2013:16-24-21-596 - System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName, String strImageFoldername)
+   at Upload.UploadImages(String UploadImagesFolder)
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-34-11-932 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-24-21-597 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-35-16-352 - Processing File Started :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-24-21-598 - System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName, String strImageFoldername)
+   at Upload.UploadImages(String UploadImagesFolder)
 ======================================================
 ======================================================
-Log Message - 07-12-2013:10-35-16-459 - Processing File Ended :C:\UploadMessages\Test2.xls 
+Log Message - 10-25-2013:16-24-33-798 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-25-30-652 - System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName, String strImageFoldername) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 326
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 287
+======================================================
+======================================================
+Log Message - 10-25-2013:16-25-30-653 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-25-30-654 - System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Upload.Import(Byte[] imgBytes, String strFileType, String strFileName, String strImageFoldername) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 326
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 287
+======================================================
+======================================================
+Log Message - 10-25-2013:16-25-53-779 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-27-44-886 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-27-44-886 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-27-44-888 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-28-32-704 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-28-32-729 - C:\UploadImages\1A\Scenario-1A000014.bmp.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-28-32-729 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-28-32-731 - C:\UploadImages\2A\Scenario-2A000014.bmp.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-050 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-058 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-097 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 302
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-097 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-099 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-42-103 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 302
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-705 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-708 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-716 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 302
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-717 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-720 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-29-45-728 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 302
+======================================================
+======================================================
+Log Message - 10-25-2013:16-33-05-677 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-33-05-684 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-34-10-245 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-34-10-248 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-668 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-680 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-693 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 308
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-694 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-696 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-48-10-703 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 308
+======================================================
+======================================================
+Log Message - 10-25-2013:16-49-36-263 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-49-36-282 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-24-372 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 308
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-24-373 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-24-375 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-24-376 - System.IO.DirectoryNotFoundException: Could not find a part of the path.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.__Error.WinIOError()
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at Upload.UploadImages(String UploadImagesFolder) in c:\Visualization\Visualization.Web\App_Code\Upload.cs:line 308
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-58-868 - Processing File Started :C:\UploadImages\1A\Scenario-1A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-58-879 - C:\UploadImages\1A\Scenario-1A000014.bmp upload successfully.
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-58-880 - Processing File Started :C:\UploadImages\2A\Scenario-2A000014.bmp 
+======================================================
+======================================================
+Log Message - 10-25-2013:16-50-58-882 - C:\UploadImages\2A\Scenario-2A000014.bmp upload successfully.
 ======================================================

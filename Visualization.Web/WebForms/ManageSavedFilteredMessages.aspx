@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ManageSavedQuery.aspx.cs" Inherits="WebForms_ManageSavedQuery" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ManageSavedFilteredMessages.aspx.cs" Inherits="WebForms_ManageSavedFilteredMessages" %>
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
-    <title>Frequent Searches</title>
+    <title>Saved Filtered Messages</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <link href="../Scripts/JQGrid/redmond-jquery-ui-custom.css" rel="stylesheet" type="text/css" />
@@ -27,26 +27,26 @@
     <script type="text/javascript">
     $(document).ready(function () {
         jQuery("#list").jqGrid({
-   	        url:'../HttpHandler/MessageHandler.ashx?operation=jqGrid',
+   	        url:'../HttpHandler/MessageHandler.ashx?operation=jqGridSavedFilteredMessages',
 	        datatype: "json",
-   	        colNames:['ID','QueryName','QueryDescription'],
+	        colNames: ['ID', 'Name', 'FilteredMessage', 'Description'],
    	        colModel:[
-   		        {name:'ID',index:'ID',key:true, width:25},
-   		        {name:'QueryName',index:'QueryName', width:175},
-   		        {name:'QueryDescription',index:'QueryDescription', width:500, editable:true, editoptions:{size:100}}			
+   		        { name: 'ID', index: 'ID', key: true, width: 25 },
+   		        { name: 'Name', index: 'Name', width: 50 },
+   		        { name: 'FilteredMessage', index: 'FilteredMessage', width: 750 },
+   		        { name: 'Description', index: 'Description', width: 200, editable: true, editoptions: { size: 500 } }
    	        ],
    	        rowNum:10,
    	        pager: '#pager',
    	        pgbuttons: true,
             viewrecords: true,
-            height: 230,
-	        editurl: '../HttpHandler/MessageHandler.ashx?operation=jqGrid',
+            height: 430,
+            editurl: '../HttpHandler/MessageHandler.ashx?operation=jqGridSavedFilteredMessages',
 	        caption: "Frequent Searches"
         });
         jQuery("#list").jqGrid('navGrid',"#pager",{edit:true,add:false,del:true}, { width: 700 });
         //jQuery("#list").jqGrid('inlineNav',"#pager");
     });
-   
     </script>
     
       

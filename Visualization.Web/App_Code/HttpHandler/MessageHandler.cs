@@ -336,6 +336,10 @@ namespace Visa
 
                                 }
                                 strMessagesList = string.Join(";", strList.ToArray());
+                                if (strMessagesList.Trim().Length > 0)
+                                {
+                                    strMessagesList += ";";
+                                }
                                 strResponse = strMessagesList + "~" + strMarkersList;
                             }
                             break;
@@ -419,7 +423,82 @@ namespace Visa
 
                     #endregion jqGrid Data
 
-                       
+
+                    #region jqGridSavedFilteredMessages Data
+
+                    case "jqGridSavedFilteredMessages":
+                        {
+                            int iPageNum = 1, iRowsPerPage = 10, iTotalCount;
+                            string strTotalCount = "0";
+                            string strOperation = context.Request.Form["oper"];
+                            string strFilteredMessageId = context.Request.Form["ID"];
+                            string strFilteredMessageDescription = context.Request.Form["Description"];
+                            string strQueryList = string.Empty;
+
+                            switch (strOperation)
+                            {
+                                case null:
+                                    {
+                                        if (context.Request.QueryString["page"] != null)
+                                        {
+                                            iPageNum = int.Parse(context.Request.QueryString["page"]);
+                                        }
+                                        if (context.Request.QueryString["rows"] != null)
+                                        {
+                                            iRowsPerPage = int.Parse(context.Request.QueryString["rows"]);
+                                        }
+                                        DataTable dT = Message.LoadSavedFilteredMessages(iPageNum, iRowsPerPage).Tables[0];
+                                        if (dT.Rows.Count > 0)
+                                        {
+                                            int count = dT.Rows.Count;
+                                            StringBuilder sbQueries = new StringBuilder();
+                                            sbQueries.Append("{");
+                                            sbQueries.Append(" \"rows\"  : [ ");
+                                            foreach (DataRow dr in dT.Rows)
+                                            {
+                                                strTotalCount = dr["TotalCount"].ToString();
+                                                sbQueries.Append(" { \"ID\" : \"" + dr["FilteredMessageID"].ToString() + "\" , \"Name\" : \"" + dr["FilteredMessageName"].ToString() + "\" , \"FilteredMessage\" : \"" + dr["FilteredMessage"].ToString().Replace("\n","<br />") + "\" , \"Description\" : \"" + dr["FilteredMessageDescription"].ToString() + "\"  },");
+                                            }
+                                            strQueryList = sbQueries.ToString();
+                                            strQueryList = strQueryList.Substring(0, strQueryList.LastIndexOf(','));
+
+                                            sbQueries = new StringBuilder();
+                                            sbQueries.Append(strQueryList + " ], ");
+
+                                            int totalPages = int.Parse(strTotalCount) / iRowsPerPage;
+
+                                            sbQueries.Append(" \"total\"  : \"" + (totalPages + 1).ToString() + "\" ,");
+                                            sbQueries.Append(" \"page\"  : \"" + iPageNum.ToString() + "\" ,");
+                                            sbQueries.Append(" \"records\"  : \"" + strTotalCount + "\" } ");
+                                            strResponse = sbQueries.ToString();
+                                        }
+                                        break;
+                                    }
+                                case "edit":
+                                    {
+                                        Message.EditSavedFilteredMessage(int.Parse(strFilteredMessageId), strFilteredMessageDescription);
+                                        strResponse = string.Empty;
+                                        break;
+                                    }
+                                case "del":
+                                    {
+                                        Message.DeleteSavedFilteredMessage(int.Parse(strFilteredMessageId));
+                                        strResponse = string.Empty;
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        strResponse = string.Empty;
+                                        break;
+                                    }
+
+                            }
+
+                            break;
+                        }
+
+                    #endregion jqGridSavedFilteredMessages Data
+
                     #region GetSavedQueries
 
                     case "GetSavedQueries":
