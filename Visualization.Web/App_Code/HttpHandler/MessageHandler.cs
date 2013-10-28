@@ -40,8 +40,6 @@ namespace Visa
             public string FQ_EventType { get; set; }
             public string FQ_EventAttr { get; set; }
             public string FQ_EventAttrSub { get; set; }
-            public string FQ_PID { get; set; }
-            public string FQ_PSID { get; set; }
 
         }
 
@@ -56,6 +54,8 @@ namespace Visa
             public string RD_FilteredMessage { get; set; }
             public string RD_FilteredMessageName { get; set; }
             public FullQuery RD_FQuery { get; set; }
+            public string FQ_PID { get; set; }
+            public string FQ_PSID { get; set; }
 
         }
 

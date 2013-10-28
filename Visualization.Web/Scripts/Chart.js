@@ -265,13 +265,13 @@
             objX.RD_SQLQueryID = sqlQuery;
             objX.RD_FilteredMessageName = filteredMessageName;
             objX.RD_FilteredMessage = filteredMessage;
+            objX.FQ_PID = processId;
+            objX.FQ_PSID = processSubTypeId;
             objX.RD_FQuery = {};
             if (sqlQuery == 0) {
                 objX.RD_FQuery.FQ_EventType = event;
                 objX.RD_FQuery.FQ_EventAttr = eAttr;
                 objX.RD_FQuery.FQ_EventAttrSub = eAttrSub;
-                objX.RD_FQuery.FQ_PID = processId;
-                objX.RD_FQuery.FQ_PSID = processSubTypeId;
             }
             var jsonStr = JSON.stringify(objX);
 
@@ -331,13 +331,13 @@
         objX.RD_Cam = cam;
         objX.RD_TML = tml;
         objX.RD_SQLQueryID = sqlQuery;
+        objX.FQ_PID = processId;
+        objX.FQ_PSID = processSubTypeId;
         objX.RD_FQuery = {};
         if(sqlQuery == 0) {
             objX.RD_FQuery.FQ_EventType = event;
             objX.RD_FQuery.FQ_EventAttr = eAttr;
             objX.RD_FQuery.FQ_EventAttrSub = eAttrSub;
-            objX.RD_FQuery.FQ_PID = processId;
-            objX.RD_FQuery.FQ_PSID = processSubTypeId;
         }
         var jsonStr = JSON.stringify(objX);
                 
@@ -369,13 +369,13 @@
         objX.RD_Cam = cam;
         objX.RD_TML = tml;
         objX.RD_SQLQueryID = sqlQuery;
+        objX.FQ_PID = processId;
+        objX.FQ_PSID = processSubTypeId;
         objX.RD_FQuery = {};
         if(sqlQuery == 0) {
             objX.RD_FQuery.FQ_EventType = event;
             objX.RD_FQuery.FQ_EventAttr = eAttr;
             objX.RD_FQuery.FQ_EventAttrSub = eAttrSub;
-            objX.RD_FQuery.FQ_PID = processId;
-            objX.RD_FQuery.FQ_PSID = processSubTypeId;
         }
         var jsonStr = JSON.stringify(objX);
                 

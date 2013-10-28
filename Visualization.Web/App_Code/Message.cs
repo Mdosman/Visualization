@@ -63,8 +63,8 @@ namespace Visa
             EventType = data.RD_FQuery.FQ_EventType;
             EventAttr = data.RD_FQuery.FQ_EventAttr;
             EventAttrSub = data.RD_FQuery.FQ_EventAttrSub;
-            ProcessId = data.RD_FQuery.FQ_PID;
-            ProcessSubTypeId = data.RD_FQuery.FQ_PSID;
+            ProcessId = data.FQ_PID;
+            ProcessSubTypeId = data.FQ_PSID;
         }
 
         #region Generate Query
