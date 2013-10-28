@@ -102,18 +102,12 @@
                 <td width="20px">
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkMappingPage" runat="server" CssClass="Label" CausesValidation="false"
-                        OnClientClick="viewMappingPage(); return false;">Process</asp:LinkButton>
-                </td>
-                <td width="20px">
-                </td>
-                <td>
                     <asp:LinkButton ID="lnkImages" runat="server" CssClass="Label" CausesValidation="false"
                         OnClientClick="viewImages(); return false;">Images</asp:LinkButton>
                 </td>
                 <td width="20px">
                 </td>
-                <td align="left">
+                <td>
                     <asp:LinkButton ID="lnkNodeGraph" runat="server" CssClass="Label" CausesValidation="false"
                         OnClientClick="viewNodeGraph(); return false;">NodeGraph</asp:LinkButton>
                 </td>
@@ -126,14 +120,20 @@
                 <td width="20px">
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkLDA" runat="server" CssClass="Label" CausesValidation="false"
-                        OnClientClick="viewLDA(); return false;">LDA</asp:LinkButton>
+                    <asp:LinkButton ID="lnkMappingPage" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewMappingPage(); return false;">Process</asp:LinkButton>
                 </td>
                 <td width="20px">
                 </td>
-                <td align="left">
+                <td>
                     <asp:LinkButton ID="lnkPCA" runat="server" CssClass="Label" CausesValidation="false"
                         OnClientClick="viewPCA(); return false;">PCA</asp:LinkButton>
+                </td>
+                <td width="20px">
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkLDA" runat="server" CssClass="Label" CausesValidation="false"
+                        OnClientClick="viewLDA(); return false;">LDA</asp:LinkButton>
                 </td>
                 <td width="20px">
                 </td>
